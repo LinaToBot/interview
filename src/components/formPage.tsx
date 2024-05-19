@@ -9,7 +9,7 @@ export const FormPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // here function to calculate the value with other component
+    // here function to calculate the value with other component (from CalculationResult)
     console.log(
       "Click on submit button and value to calculate: ",
       valueToCalculate
