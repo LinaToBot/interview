@@ -1,4 +1,4 @@
-const isPrime = (num: number) => {
+const isPrimeNumber = (num: number): boolean => {
   if (num <= 1) return false;
   if (num <= 3) return true;
 
@@ -13,19 +13,29 @@ const isPrime = (num: number) => {
   return true;
 };
 
-const umpteenthPrime = (n: number) => {
+const umpteenthPrimeNumbers = (n: number): number => {
   if (n === 1) return 2;
   let count = 1;
   let num = 3;
 
   while (count < n) {
     num += 2;
-    if (isPrime(num)) {
+    if (isPrimeNumber(num)) {
       count++;
     }
   }
 
   return num;
+};
+
+const triangularNumbers = (n: number): number => {
+  return (n * n + n) / 2;
+};
+
+const fibonacciNumbers = (n: number): number => {
+  if (n <= 1) {
+    return n;
+  } else return fibonacciNumbers(n - 1) + fibonacciNumbers(n - 2);
 };
 
 interface CalculationResultProps {
@@ -36,9 +46,9 @@ interface CalculationResultProps {
 class SeriesCalculator {
   public calculateSeriesValue(n: number): number {
     if (n < 2) throw new Error("Error ");
-    const calculationWithPrime = umpteenthPrime(n - 2);
-    const calculationWithTriangular = 2;
-    const calculationWithFibonacci = 3;
+    const calculationWithPrime = umpteenthPrimeNumbers(n - 2);
+    const calculationWithTriangular = triangularNumbers(n - 2);
+    const calculationWithFibonacci = fibonacciNumbers(n - 1);
     const seriesN =
       2 *
       calculationWithPrime *
