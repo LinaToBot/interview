@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-// interface FormPageProps {
-//   calculateWith: string; // (num: number) = void
-// }
+interface FormPageProps {
+  valueInNumber: (num: number) => void;
+}
 
-export const FormPage: React.FC = () => {
+export const FormPage: React.FC<FormPageProps> = ({ valueInNumber }) => {
   const [valueToCalculate, setValueToCalculate] = useState<number | string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // here function to calculate the value with other component (from CalculationResult)
+    valueInNumber(Number(valueToCalculate));
     console.log(
       "Click on submit button and value to calculate: ",
       valueToCalculate
