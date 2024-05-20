@@ -42,7 +42,7 @@ const fibonacciNumbers = (n: number): number => {
 
 interface CalculationResultProps {
   n: number;
-  resultValue: (result: number) => void;
+  valueResult: (result: number) => void;
 }
 
 class SeriesCalculator {
@@ -64,18 +64,18 @@ class SeriesCalculator {
 
 const CalculationResult: React.FC<CalculationResultProps> = ({
   n,
-  resultValue,
+  valueResult,
 }) => {
   const seriesCalculator = new SeriesCalculator();
 
   useEffect(() => {
     try {
       const result = seriesCalculator.calculateSeriesValue(n);
-      resultValue(result);
+      valueResult(result);
     } catch (error) {
       console.error(error);
     }
-  }, [n, resultValue, seriesCalculator]);
+  }, [n, valueResult, seriesCalculator]);
 
   return null;
 };
