@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const isPrimeNumber = (num: number): boolean => {
   if (num <= 1) return false;
   if (num <= 3) return true;
@@ -66,11 +68,16 @@ const CalculationResult: React.FC<CalculationResultProps> = ({
 }) => {
   const seriesCalculator = new SeriesCalculator();
 
-  return (
-    <>
-      <div>{seriesCalculator.calculateSeriesValue(n)}</div>
-    </>
-  );
+  useEffect(() => {
+    try {
+      const result = seriesCalculator.calculateSeriesValue(n);
+      valueResult(result);
+    } catch (error) {
+      console.error(error);
+    }
+  }, [n, valueResult, seriesCalculator]);
+
+  return null;
 };
 
 export default CalculationResult;
