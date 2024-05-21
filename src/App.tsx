@@ -2,7 +2,7 @@
 import { useState } from "react";
 // components.
 import { FormPage } from "./components/formPage";
-import CalculationResult from "./components/calculationResult";
+import CalculationResult from "./components/CalculationResult/calculationResult";
 import { ShowResult } from "./components/ShowResult";
 
 // styles
