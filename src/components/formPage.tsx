@@ -21,15 +21,20 @@ export const FormPage: React.FC<FormPageProps> = ({ valueInNumber }) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <h1>Calculador de series</h1>
+      <form className="form-page" onSubmit={handleSubmit}>
         <label>
-          Calcular un número
-          <input
-            type="number"
-            value={valueToCalculate}
-            onChange={handleChange}
-          />
+          Ingresa un número y según las series numericas de numeros primos,
+          <br />
+          números triangulares y sucesión de fibonacci te regreso un resultado
         </label>
+        <input
+          placeholder="Escribe un número"
+          type="number"
+          value={valueToCalculate}
+          onChange={handleChange}
+          required
+        />
         <button type="submit">Calcular</button>
       </form>
     </>
