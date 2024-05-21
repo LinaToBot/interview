@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-// interface FormPageProps {
-//   calculateWith: string; // (num: number) = void
-// }
+interface FormPageProps {
+  valueInNumber: (num: number) => void;
+}
 
-export const FormPage: React.FC = () => {
+export const FormPage: React.FC<FormPageProps> = ({ valueInNumber }) => {
   const [valueToCalculate, setValueToCalculate] = useState<number | string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // here function to calculate the value with other component (from CalculationResult)
+    valueInNumber(Number(valueToCalculate));
     console.log(
       "Click on submit button and value to calculate: ",
       valueToCalculate
@@ -21,15 +21,20 @@ export const FormPage: React.FC = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <h1>Calculador de series</h1>
+      <form className="form-page" onSubmit={handleSubmit}>
         <label>
-          Calcular un número
-          <input
-            type="number"
-            value={valueToCalculate}
-            onChange={handleChange}
-          />
+          Ingresa un número y según las series numericas de numeros primos,
+          <br />
+          números triangulares y sucesión de fibonacci te regreso un resultado
         </label>
+        <input
+          placeholder="Escribe un número"
+          type="number"
+          value={valueToCalculate}
+          onChange={handleChange}
+          required
+        />
         <button type="submit">Calcular</button>
       </form>
     </>

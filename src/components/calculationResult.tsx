@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 
-const isPrimeNumber = (num: number): boolean => {
-  if (num <= 1) return false;
-  if (num <= 3) return true;
+const isPrimeNumber = (n: number): boolean => {
+  if (n <= 1) return false;
+  if (n <= 3) return true;
 
-  if (num % 2 === 0 || num % 3 === 0) return false;
+  if (n % 2 === 0 || n % 3 === 0) return false;
 
   let i = 5;
-  while (i * i <= num) {
-    if (num % i === 0 || num % (i + 2) === 0) return false;
+  while (i * i <= n) {
+    if (n % i === 0 || n % (i + 2) === 0) return false;
     i += 6;
   }
 
@@ -18,16 +18,16 @@ const isPrimeNumber = (num: number): boolean => {
 const umpteenthPrimeNumbers = (n: number): number => {
   if (n === 1) return 2;
   let count = 1;
-  let num = 3;
+  let primeNum = 3;
 
   while (count < n) {
-    num += 2;
-    if (isPrimeNumber(num)) {
+    primeNum += 2;
+    if (isPrimeNumber(primeNum)) {
       count++;
     }
   }
 
-  return num;
+  return primeNum;
 };
 
 const triangularNumbers = (n: number): number => {
