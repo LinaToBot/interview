@@ -6,7 +6,7 @@ import CalculationResult from "./components/CalculationResult/CalculationResult"
 import { ShowResult } from "./components/ShowResult";
 
 // styles
-import { AppContainer, GlobalStyle } from "./styles";
+import { AppContainer, GlobalStyle } from "./styles/styles";
 
 const App: React.FC = () => {
   const [number, setNumber] = useState<number>(0);

@@ -24,9 +24,12 @@ export const FormPage: React.FC<FormPageProps> = ({ valueInNumber }) => {
       <h1>Calculador de series</h1>
       <form className="form-page" onSubmit={handleSubmit}>
         <label>
-          Ingresa un número y según las series numericas de numeros primos,
+          Ingresa un número y te doy el resultado, según las series
+          <br /> numericas de numeros primos, números triangulares y
           <br />
-          números triangulares y sucesión de fibonacci te regreso un resultado
+          sucesión de fibonacci, de la siguiente operación
+          <br />
+          (2primo(n-2)*3triangular(n-2)*7fibonacci(n-1)).
         </label>
         <input
           placeholder="Escribe un número"
