@@ -47,7 +47,7 @@ interface CalculationResultProps {
 
 export class SeriesCalculator {
   public calculateSeriesValue(n: number): number {
-    if (n < 2) throw new Error("Error ");
+    if (n < 2) throw new Error("Error");
     const calculationWithPrime = umpteenthPrimeNumbers(n - 2);
     const calculationWithTriangular = triangularNumbers(n - 2);
     const calculationWithFibonacci = fibonacciNumbers(n - 1);
