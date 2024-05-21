@@ -1,6 +1,6 @@
 import { render, waitFor } from "@testing-library/react";
-import CalculationResult from "../calculationResult";
-import { SeriesCalculator } from "../calculationResult";
+import CalculationResult from "../CalculationResultX";
+import { SeriesCalculator } from "../CalculationResultX";
 
 describe("CalculationResult componnet testing", () => {
   const mockValueResult = jest.fn();

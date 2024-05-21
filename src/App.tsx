@@ -1,8 +1,8 @@
 // libraries.
 import { useState } from "react";
 // components.
-import { FormPage } from "./components/formPage";
-import CalculationResult from "./components/CalculationResult/calculationResult";
+import { FormPage } from "./components/FormPageX";
+import CalculationResult from "./components/CalculationResult/CalculationResultX";
 import { ShowResult } from "./components/ShowResult";
 
 // styles
