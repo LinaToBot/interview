@@ -22,4 +22,18 @@ describe("CalculationResult componnet testing", () => {
       });
     }
   );
+
+  test("throws error for 'n' less than 2", () => {
+    expect(() => {
+      seriesCalculator.calculateSeriesValue(1);
+    }).toThrow("Error");
+  });
+
+  expect(() => {
+    seriesCalculator.calculateSeriesValue(0);
+  }).toThrow("Error");
+
+  expect(() => {
+    seriesCalculator.calculateSeriesValue(-1);
+  }).toThrow("Error");
 });
